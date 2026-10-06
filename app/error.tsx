@@ -1,0 +1,2 @@
+'use client'
+export default function Error({reset}:{reset:()=>void}){return <main className="section" style={{minHeight:'70vh',display:'grid',placeItems:'center',textAlign:'center'}}><div><div className="eyebrow">Error 500</div><h1 style={{fontSize:44,color:'var(--ink)'}}>Our system is temporarily unavailable.</h1><p>Please try again shortly or contact support on WhatsApp: +254 112 272 061.</p><button className="button button-primary" onClick={reset}>Try Again</button></div></main>}
