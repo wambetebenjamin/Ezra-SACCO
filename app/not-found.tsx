@@ -1,0 +1,2 @@
+import Link from 'next/link'
+export default function NotFound(){return <main className="section" style={{minHeight:'70vh',display:'grid',placeItems:'center',textAlign:'center'}}><div><div className="eyebrow">Error 404</div><h1 style={{fontSize:48,color:'var(--ink)'}}>This page could not be found.</h1><p>Let’s get you back to your financial goals.</p><Link className="button button-primary" href="/">Return to Homepage</Link></div></main>}

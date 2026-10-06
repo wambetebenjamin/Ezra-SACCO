@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server'
+export async function POST(request:Request){const {token}=await request.json();if(!process.env.RECAPTCHA_SECRET_KEY)return NextResponse.json({ok:false,error:'CAPTCHA is not configured'},{status:503});const body=new URLSearchParams({secret:process.env.RECAPTCHA_SECRET_KEY,response:token});const result=await fetch('https://www.google.com/recaptcha/api/siteverify',{method:'POST',body});const data=await result.json();return NextResponse.json({ok:Boolean(data.success&&(!data.score||data.score>=.5)),score:data.score??null})}
